@@ -13,6 +13,14 @@ public class neurone {
         this.conectionSortie= new ArrayList<connection>();
     }
 
+    public void addConnectionEntre(connection co){
+        this.conectionEntre.add(co);
+    }
+
+    public void addConnectionSortie(connection co){
+        this.conectionSortie.add(co);
+    }
+
     public float getBias() {
         return bias;
     }
