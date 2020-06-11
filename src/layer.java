@@ -8,6 +8,5 @@ public class layer {
     public layer(int nbneurone){
         this.nombreneurone=nbneurone;
         this.myNeurone= new ArrayList<neurone>();
-
     }
 }
