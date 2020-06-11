@@ -5,4 +5,10 @@ public class neurone {
     private int data;
     private ArrayList<connection> lien;
 
+
+    public neurone(float bias){
+        this.bias=bias;
+        this.data=0;
+        this.lien= new ArrayList<connection>();
+    }
 }
