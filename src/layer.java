@@ -5,7 +5,7 @@ public class layer {
 
     public layer(int nbneurone){
         this.nombreneurone=nbneurone;
-        this.myNeurone=new myneurone();
+        this.myNeurone=new neurone(1);
 
     }
 }
