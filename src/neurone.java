@@ -3,14 +3,16 @@ import java.util.ArrayList;
 public class neurone {
     private float bias;
     private float data;
-    private ArrayList<connection> conectionEntre;
-    private ArrayList<connection> conectionSortie;
+
+    private ArrayList<connection> connectionEntre;
+    private ArrayList<connection> connectionSortie;
+
 
     public neurone(float bias){
         this.bias=bias;
         this.data=0;
-        this.conectionEntre= new ArrayList<connection>();
-        this.conectionSortie= new ArrayList<connection>();
+        this.connectionEntre = new ArrayList<connection>();
+        this.connectionSortie = new ArrayList<connection>();
     }
 
     public void backPropagation(boolean bonneNeurone){
@@ -55,12 +57,13 @@ public class neurone {
     }
 
     public void addConnectionEntre(connection co){
-        this.conectionEntre.add(co);
+        this.connectionEntre.add(co);
     }
 
     public void addConnectionSortie(connection co){
-        this.conectionSortie.add(co);
+        this.connectionSortie.add(co);
     }
+
 
     public float getBias() {
         return bias;
@@ -74,23 +77,23 @@ public class neurone {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(float data) {
         this.data = data;
     }
 
-    public ArrayList<connection> getConectionEntre() {
-        return conectionEntre;
+    public ArrayList<connection> getConnectionEntre() {
+        return connectionEntre;
     }
 
-    public void setConectionEntre(ArrayList<connection> conectionEntre) {
-        this.conectionEntre = conectionEntre;
+    public void setConnectionEntre(ArrayList<connection> connectionEntre) {
+        this.connectionEntre = connectionEntre;
     }
 
-    public ArrayList<connection> getConectionSortie() {
-        return conectionSortie;
+    public ArrayList<connection> getConnectionSortie() {
+        return connectionSortie;
     }
 
-    public void setConectionSortie(ArrayList<connection> conectionSortie) {
-        this.conectionSortie = conectionSortie;
+    public void setConnectionSortie(ArrayList<connection> connectionSortie) {
+        this.connectionSortie = connectionSortie;
     }
 }
