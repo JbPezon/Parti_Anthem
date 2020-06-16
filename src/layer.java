@@ -28,6 +28,17 @@ public class layer {
         }
     }
 
+    public float calculPoid(int idNeuroneBonne){
+        int result = 0;
+        for (int i = 0; i < this.myNeurone.size(); i++) {
+            if (i == idNeuroneBonne)
+                result+= (myNeurone.get(i).getData()-1)*(myNeurone.get(i).getData()-1);
+            else
+                result += (myNeurone.get(i).getData())*(myNeurone.get(i).getData());
+        }
+        return result;
+    }
+
     public int getNbNeurone() {
         return nbNeurone;
     }
