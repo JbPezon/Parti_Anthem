@@ -27,6 +27,27 @@ public class layer {
             }
         }
     }
+    public static double sigmoid(float x) {
+        return (1/( 1 + Math.pow(Math.E,(-1*x))));
+    }
+
+
+
+    public void communique()
+    {
+        float result = 0;
+        for (neurone n: this.myNeurone) {
+
+            for (connection c: n.getConnectionEntre()) {
+                result += c.getPoid()*c.getNeuroneGauche().getData();
+            }
+            n.setData((float) sigmoid(result+n.getBias()));
+
+
+        }
+
+    }
+
 
     public int getNbNeurone() {
         return nbNeurone;
