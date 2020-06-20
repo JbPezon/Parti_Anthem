@@ -10,9 +10,9 @@ public class reseau {
 
     public void creerReseau(){ // TODO faire en sorte que ce soit l'utilisateur qui rentre les valeurs
         this.mesLayer.add(new layer(1000));
-        this.mesLayer.add(new layer(10));
-        this.mesLayer.add(new layer(10));
-        this.mesLayer.add(new layer(8));
+        this.mesLayer.add(new layer(15 ));
+        this.mesLayer.add(new layer(15));
+        this.mesLayer.add(new layer(12));
 
         for (layer l: this.mesLayer) {
             l.remplieLayer();
