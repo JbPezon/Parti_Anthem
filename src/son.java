@@ -50,4 +50,26 @@ public class son {
         }
     }
 
+    public void afficheDonne(){
+        System.out.println("nbDonne" + this.donnees.size());
+        for (float f : this.donnees) {
+            System.out.println(f);
+        }
+    }
+
+    public int getFrequence() {
+        return frequence;
+    }
+
+    public void setFrequence(int frequence) {
+        this.frequence = frequence;
+    }
+
+    public ArrayList<Float> getDonnees() {
+        return donnees;
+    }
+
+    public void setDonnees(ArrayList<Float> donnees) {
+        this.donnees = donnees;
+    }
 }
