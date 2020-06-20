@@ -12,8 +12,7 @@ public class entrer {
 
     }
     public void remplieentrer(float value){
-        if (notes.size()<nbnotes)
-            this.notes.add(value);
+        this.notes.add(value);
     }
 
     public float getNote() {
