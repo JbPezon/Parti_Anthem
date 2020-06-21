@@ -1,22 +1,40 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class entrer {
     private int note;
     private int nbnotes ;
     private ArrayList<Float> notes;
 
-    public entrer(int note,int nbnotes){
-        this.note =note;
-        this.nbnotes=nbnotes;
+    public entrer(int note, son monSon){
         this.notes=new ArrayList<Float>();
+        this.note = note;
+        int tailleEchantillion = 0;
+        float moyenne = 0;
+        if (monSon.donnees().size() >= 1000) {
+            ComplexeCartesien[] signalTest = new ComplexeCartesien[16384];
+            ArrayList<Float> list = new ArrayList<Float>();
+            for (int i = 0; i < 16384; ++i)
+                signalTest[i] = new ComplexeCartesien(monSon.getDonnees().get(i), 0);
+            Complexe[] resultat = FFT.appliqueSur(signalTest);
+            for (int i = 0; i < 1000; i++) {
+                list.add( Math.abs((float) resultat[i].reel()));
+            }
+            float max = Collections.max(list);
+            for (int i = 0; i < 1000; i++) {
+                notes.add(list.get(i)/max);
+            }
+        }
+        else{
+            System.out.println("Erreur taille fichier wav");
+        }
 
     }
     public void remplieentrer(float value){
-        if (notes.size()<nbnotes)
-            this.notes.add(value);
+        this.notes.add(value);
     }
 
-    public float getNote() {
+    public int getNote() {
         return note;
     }
 

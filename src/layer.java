@@ -42,15 +42,12 @@ public class layer {
                 result += c.getPoid()*c.getNeuroneGauche().getData();
             }
             n.setData((float) sigmoid(result+n.getBias()));
-
-
         }
-
     }
 
 
     public float calculPoid(int idNeuroneBonne){
-        int result = 0;
+        float result = 0;
         for (int i = 0; i < this.myNeurone.size(); i++) {
             if (i == idNeuroneBonne)
                 result+= (myNeurone.get(i).getData()-1)*(myNeurone.get(i).getData()-1);
@@ -58,6 +55,12 @@ public class layer {
                 result += (myNeurone.get(i).getData())*(myNeurone.get(i).getData());
         }
         return result;
+    }
+
+    public void afficheData(){
+        for (neurone n: myNeurone) {
+            System.out.println(n.getData());
+        }
     }
 
     public int getNbNeurone() {
