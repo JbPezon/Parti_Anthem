@@ -96,12 +96,12 @@ public class reseau {
             //TODO verifier si cest la bonen neurone
             n.backPropagation(false, poid);
         }
-        /*
+
         System.out.println("--------------------------------");
         for (neurone n : mesLayer.get(3).getMyNeurone()) {
             System.out.println(n);
         }
-        */
+
 
         return poid;
     }

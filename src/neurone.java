@@ -21,7 +21,21 @@ public class neurone {
 
     public void backPropagation(boolean bonNeurone, float fOut) {
         float nouveauPoid = 0;
-        float n = 0.01f;
+        float n = 0.08f;
+        /*
+        float error = 0;
+
+        if (bonNeurone)
+            error = 1 - this.getData();
+        else
+            error = this.getData();
+
+        for (connection c: connectionEntre) {
+            c.setPoid(c.getPoid()+n*c.getNeuroneGauche().getData()*error);
+        }
+        this.setBias();
+        */
+
 
 
         float dv = 0;
@@ -47,6 +61,7 @@ public class neurone {
 
             c.setPoid(nouveauPoid);
         }
+
 
 
         /*
