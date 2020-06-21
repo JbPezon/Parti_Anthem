@@ -8,39 +8,43 @@ public class neurone {
     private ArrayList<connection> connectionSortie;
 
 
-    public neurone(float bias){
-        this.bias=bias;
-        this.data=0;
+    public neurone(float bias) {
+        this.bias = bias;
+        this.data = 0;
         this.connectionEntre = new ArrayList<connection>();
         this.connectionSortie = new ArrayList<connection>();
     }
 
     public static double sigmoid(float x) {
-        return (1/( 1 + Math.pow(Math.E,(-1*x))));
+        return (1 / (1 + Math.pow(Math.E, (-1 * x))));
     }
 
-    public void backPropagation(boolean bonneNeurone, float fOut){
+    public void backPropagation(boolean bonNeurone, float fOut) {
         float nouveauPoid = 0;
-        float n = 0.005f;
+        float n = 0.01f;
+
+
         float dv = 0;
         float dwi = 0;
         float dbi = 0;
         float db = 0;
 
-        if (bonneNeurone){
-            dv = fOut * ( 1 - fOut) * (1 - fOut);
-        }else {
-            dv =  fOut * ( 1 - fOut) * fOut;
+        if (bonNeurone) {
+            dv = fOut * (1 - fOut) * (fOut - 1);
+        } else {
+            dv = fOut * (1 - fOut) * fOut;
         }
 
         for (connection c : this.connectionEntre) {
-            dwi = this.getData() * (1- this.getData()) * c.getPoid() * dv;
+            dwi = this.getData() * (1 - this.getData()) * c.getPoid() * dv;
             nouveauPoid = c.getPoid() + n * dwi * c.getNeuroneGauche().getData();
 
 
-            dbi = this.getData() * ( 1 - this.getData()) * c.getPoid() * dv;
+            dbi = this.getData() * (1 - this.getData()) * c.getPoid() * dv;
             db = n * dbi * 1;
+
             this.setBias(this.getBias() + db);
+
             c.setPoid(nouveauPoid);
         }
 
@@ -71,11 +75,11 @@ public class neurone {
 
     }
 
-    public void addConnectionEntre(connection co){
+    public void addConnectionEntre(connection co) {
         this.connectionEntre.add(co);
     }
 
-    public void addConnectionSortie(connection co){
+    public void addConnectionSortie(connection co) {
         this.connectionSortie.add(co);
     }
 
@@ -110,5 +114,12 @@ public class neurone {
 
     public void setConnectionSortie(ArrayList<connection> connectionSortie) {
         this.connectionSortie = connectionSortie;
+    }
+
+    @Override
+    public String toString() {
+        String result = " neurone :\n";
+        result += "data : " + this.getData() + " bias : " + this.getBias() + "\n";
+        return result;
     }
 }

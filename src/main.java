@@ -47,26 +47,62 @@ public class main {
 
 
         System.out.println("\n\n");
-        for (int i = 0; i < 10000 ; i++) {
-            System.out.println(monReseau.apprentissage(batch1.get(0)));
-        }
-        /*
+
+
         int cpt = 0;
-        for (int i = 0; i < 2000; i++) {
-            for (entrer e: batch1) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
+        for (int j = 0; j < 3; j++) {
+
+
+            for (int i = 0; i < 2000; i++) {
+                for (entrer e : batch1) {
+                    if (cpt == 1000) {
+                        System.out.println(monReseau.apprentissage(e));
+                        cpt = 0;
+                    } else
+                        monReseau.apprentissage(e);
+                    cpt++;
                 }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
+            }
+
+            for (int i = 0; i < 2000; i++) {
+                for (entrer e : batch2) {
+                    if (cpt == 1000) {
+                        System.out.println(monReseau.apprentissage(e));
+                        cpt = 0;
+                    } else
+                        monReseau.apprentissage(e);
+                    cpt++;
+                }
+            }
+
+            for (int i = 0; i < 2000; i++) {
+                for (entrer e : batch3) {
+                    if (cpt == 1000) {
+                        System.out.println(monReseau.apprentissage(e));
+                        cpt = 0;
+                    } else
+                        monReseau.apprentissage(e);
+                    cpt++;
+                }
             }
         }
 
-         */
+        int cptResult = 0;
+        for (int i = 0; i < 10; i++) {
 
 
+            for (entrer e : batch1) {
+                cptResult += monReseau.testReseau(e);
+            }
+            for (entrer e : batch2) {
+                cptResult += monReseau.testReseau(e);
+            }
+            for (entrer e : batch3) {
+                cptResult += monReseau.testReseau(e);
+            }
+        }
+
+        System.out.println("Le reseau a trouvé : " + cptResult + "/160");
 
     }//Fin de la méthode main
 }
