@@ -49,7 +49,7 @@ public class reseau {
         this.mesLayer.add(new layer(1000));
         this.mesLayer.add(new layer(20));
         this.mesLayer.add(new layer(20));
-        this.mesLayer.add(new layer(14));
+        this.mesLayer.add(new layer(12));
 
         for (layer l: this.mesLayer) {
             l.remplieLayer();
