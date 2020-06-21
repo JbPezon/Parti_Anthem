@@ -5,6 +5,7 @@ public class main {
     public static void main(String[] args) {
         reseau monReseau = new reseau();
         monReseau.creerReseau();
+
         son monDo = new son("sample/do 16 bits.wav");
         son monDo2 = new son("sample/do2 16 bits.wav");
         son monDod2 = new son("sample/dod2 16 bits.wav");
@@ -46,6 +47,10 @@ public class main {
 
 
         System.out.println("\n\n");
+        for (int i = 0; i < 10000 ; i++) {
+            System.out.println(monReseau.apprentissage(batch1.get(0)));
+        }
+        /*
         int cpt = 0;
         for (int i = 0; i < 2000; i++) {
             for (entrer e: batch1) {
@@ -58,59 +63,10 @@ public class main {
                 cpt++;
             }
         }
-        for (int i = 0; i < 2000; i++) {
-            for (entrer e: batch2) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
-                }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
-            }
-        }for (int i = 0; i < 2000; i++) {
-            for (entrer e: batch3) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
-                }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
-            }
-        }
-        for (int i = 0; i < 100; i++) {
-            for (entrer e: batch1) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
-                }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
-            }
-            for (entrer e: batch2) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
-                }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
-            }
-            for (entrer e: batch3) {
-                if (cpt == 100) {
-                    System.out.println(monReseau.apprentissage(e));
-                    cpt = 0;
-                }
-                else
-                    monReseau.apprentissage(e);
-                cpt++;
-            }
-        }
-        
 
-        //monLa.afficheDonne();
+         */
+
+
 
     }//Fin de la méthode main
 }

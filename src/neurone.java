@@ -33,7 +33,7 @@ public class neurone {
             dv =  fOut * ( 1 - fOut) * fOut;
         }
 
-        for (connection c: this.connectionEntre) {
+        for (connection c : this.connectionEntre) {
             dwi = this.getData() * (1- this.getData()) * c.getPoid() * dv;
             nouveauPoid = c.getPoid() + n * dwi * c.getNeuroneGauche().getData();
 
